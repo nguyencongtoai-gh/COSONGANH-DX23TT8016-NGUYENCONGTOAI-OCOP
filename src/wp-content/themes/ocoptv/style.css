@@ -1,0 +1,19 @@
+/*
+Theme Name: OCOP TV
+Theme URI: https://github.com/example/csn-ocoptravinh-wordpress
+Description: Child theme của Astra cho website giới thiệu sản phẩm OCOP Trà Vinh — đồ án cơ sở ngành. Tùy biến nhận diện (logo, bộ màu xanh – vàng, menu tám mục, footer ba cột), shortcode [ocop_noibat], [ocop_danhsach], phân quyền – kiểm duyệt và tích hợp WooCommerce.
+Author: Sinh viên thực hiện đồ án cơ sở ngành
+Author URI: https://example.com
+Template: astra
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ocoptv
+Tags: e-commerce, two-columns, custom-menu, custom-logo
+*/
+
+/*
+ * Tệp này chỉ chứa phần khai báo child theme (Template: astra).
+ * Toàn bộ màu sắc – bố cục tùy biến nằm ở assets/css/ocoptv.css
+ * và được nạp qua functions.php (enqueue sau stylesheet của theme cha).
+ */

@@ -1,0 +1,16 @@
+# Hệ điều hành / trình soạn thảo
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Nhật ký và tạm
+*.log
+tmp/
+cache/
+
+# Không đưa dữ liệu máy chủ WordPress thật vào repo
+# (chỉ theo dõi src/, setup/, progress-report/, thesis/ theo quy định học phần)
+uploads/
+*.sql.gz
