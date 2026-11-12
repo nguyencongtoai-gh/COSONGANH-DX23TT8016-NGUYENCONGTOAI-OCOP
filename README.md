@@ -6,10 +6,6 @@ Website xây dựng trên nền tảng **WordPress** (cục bộ qua XAMPP), tù
 **child theme `ocoptv`** trên theme cha Astra, tích hợp **WooCommerce** cho
 phần mở rộng bán hàng trực tuyến.
 
-> Khi đẩy lên GitHub, đặt tên repository theo quy định học phần:
-> `csn-<ma-lop>-<ho-ten-khong-dau>-ocoptravinh-wordpress`
-> và mời giảng viên hướng dẫn làm collaborator ngay tuần đầu.
-
 ## Tính năng (đối chiếu 6 yêu cầu đề tài)
 
 |#|Yêu cầu|Hiện thực trong mã nguồn|
