@@ -44,7 +44,8 @@ trong khoảng 30 phút, tương ứng Phụ lục A của báo cáo đồ án.
    `http://localhost/ocoptravinh/seed-data.php?chay=1` rồi làm theo trang
    kết quả. Seeder tạo: 4 nhóm ngành, 8 địa phương, 21 đơn vị sản xuất,
    22 sản phẩm OCOP đủ 7 thuộc tính, 12 bài tin tức, 4 album, 6 trang,
-   menu 8 mục và các tài khoản mẫu.
+   menu 8 mục và các tài khoản mẫu. Kiểm tra dòng “Ảnh sản phẩm đã gán”
+   trong trang kết quả — nếu bằng 0, xem mục xử lý sự cố bên dưới.
 8. **Kiểm tra**: đăng nhập `wp-admin`; xem trang chủ, trang danh mục sản phẩm
    (thử bộ lọc 5 tiêu chí), trang chi tiết sản phẩm, trang đơn vị; thử quy
    trình gửi – kiểm duyệt bằng tài khoản `donvi01` rồi duyệt bằng `bientap`.
@@ -67,8 +68,13 @@ trong khoảng 30 phút, tương ứng Phụ lục A của báo cáo đồ án.
   trong `httpd.conf`, khi đó URL là `http://localhost:8080/ocoptravinh`.
 - **Trang sản phẩm báo lỗi 404**: vào *Settings → Permalinks* nhấn Save
   (seeder đã đặt cấu trúc `/%postname%/`, chỉ cần flush lại).
-- **Ảnh sản phẩm thiếu**: kiểm tra thư mục `wp-content/uploads/ocoptv/`
-  có các tệp `sp-01.png` … `sp-22.png`, `gal-01.png` … `gal-18.png`.
+- **Ảnh sản phẩm thiếu** (thẻ sản phẩm hiện logo thay ảnh): nguyên nhân là
+  chạy `seed-data.php` trước khi copy ảnh mẫu — seeder bỏ qua phần gán ảnh
+  và không cho chạy lại. Cách sửa: copy 41 file ảnh từ `src/sample-data/images`
+  vào `wp-content/uploads/ocoptv/`, sao chép `setup/sua-anh.php` vào thư mục
+  gốc WordPress rồi mở `http://localhost/ocoptravinh/sua-anh.php?chay=1` —
+  tệp này chỉ gán lại ảnh cho 22 sản phẩm, tạo 4 album và gán logo, không
+  tạo dữ liệu trùng lặp; chạy xong thì xóa tệp khỏi máy chủ.
 - **Thư thông báo kiểm duyệt không gửi được**: `wp_mail` trên localhost
   cần SMTP — cài plugin WP Mail SMTP và cấu hình gmail ứng dụng; logic
   kiểm duyệt vẫn hoạt động bình thường không phụ thuộc thư.
